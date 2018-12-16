@@ -43,7 +43,7 @@ import java.util.Random;
 @Component
 public class SpecialRoutesFilter extends ZuulFilter {
     private static final int FILTER_ORDER =  1;
-    private static final boolean SHOULD_FILTER = false;
+    private static final boolean SHOULD_FILTER = true;
 
     @Autowired
     FilterUtils filterUtils;
@@ -206,7 +206,7 @@ public class SpecialRoutesFilter extends ZuulFilter {
     @Override
     public Object run() {
         RequestContext ctx = RequestContext.getCurrentContext();
-
+        System.out.println("inside SpecialRoutesFilter filterUtils.getServiceId()=="+filterUtils.getServiceId());
         AbTestingRoute abTestRoute = getAbRoutingInfo( filterUtils.getServiceId() );
 
         if (abTestRoute!=null && useSpecialRoute(abTestRoute)) {
