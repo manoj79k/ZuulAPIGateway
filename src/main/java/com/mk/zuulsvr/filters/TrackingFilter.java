@@ -38,6 +38,7 @@ public class TrackingFilter extends ZuulFilter{
     }
 
     private boolean isCorrelationIdPresent(){
+    	//System.out.println("inside isCorrelationIdPresent====="+filterUtils.getCorrelationId());
       if (filterUtils.getCorrelationId() !=null){
           return true;
       }
@@ -54,10 +55,13 @@ public class TrackingFilter extends ZuulFilter{
         RequestContext ctx = RequestContext.getCurrentContext();
 
         if (isCorrelationIdPresent()) {
+        	System.out.println("tmx-correlation-id found in tracking filter================="+filterUtils.getCorrelationId());
             logger.debug("tmx-correlation-id found in tracking filter: {}. ", filterUtils.getCorrelationId());
         }
         else{
+        	
             filterUtils.setCorrelationId(generateCorrelationId());
+            System.out.println("tmx-correlation-id generated in tracking filte================="+filterUtils.getCorrelationId());
             logger.debug("tmx-correlation-id generated in tracking filter: {}.", filterUtils.getCorrelationId());
         }
 

@@ -20,11 +20,13 @@ public class FilterUtils {
     public String getCorrelationId(){
         RequestContext ctx = RequestContext.getCurrentContext();
 
+       // System.out.println("getCorrelationId==="+ctx.getRequest().getHeader(CORRELATION_ID));
         if (ctx.getRequest().getHeader(CORRELATION_ID) !=null) {
             return ctx.getRequest().getHeader(CORRELATION_ID);
         }
         else{
-            return  ctx.getZuulRequestHeaders().get(CORRELATION_ID);
+           // System.out.println(" else ==="+ctx.getZuulRequestHeaders().get(CORRELATION_ID));
+        	return  ctx.getZuulRequestHeaders().get(CORRELATION_ID);
         }
     }
 

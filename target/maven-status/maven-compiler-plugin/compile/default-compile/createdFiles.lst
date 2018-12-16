@@ -1,8 +1,12 @@
+com\mk\zuulsvr\utils\UserContextHolder.class
 com\mk\zuulsvr\filters\AuthenticationFilter.class
-com\mk\zuulsvr\filters\FilterUtils.class
+com\mk\zuulsvr\utils\UserContextInterceptor.class
+com\mk\zuulsvr\utils\UserContext.class
 com\mk\zuulsvr\filters\ResponseFilter.class
-com\mk\zuulsvr\model\UserInfo.class
 com\mk\zuulsvr\ZuulServerApplication.class
+com\mk\zuulsvr\utils\UserContextFilter.class
 com\mk\zuulsvr\filters\TrackingFilter.class
-com\mk\zuulsvr\filters\SpecialRoutesFilter.class
 com\mk\zuulsvr\model\AbTestingRoute.class
+com\mk\zuulsvr\filters\FilterUtils.class
+com\mk\zuulsvr\model\UserInfo.class
+com\mk\zuulsvr\filters\SpecialRoutesFilter.class

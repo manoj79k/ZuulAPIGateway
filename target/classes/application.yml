@@ -29,7 +29,7 @@ eureka:
 
 
 zuul:
-  ignored-services: 'organizationservice'
+  #ignored-services: 'organizationservice'
   prefix: /api
   routes:
     organizationservice: /organization/**
